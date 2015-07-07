@@ -1,0 +1,8 @@
+---
+credentials_user: ''
+credentials_group: staff
+credentials_home_path: "/home/{{ credentials_user }}"
+credentials_id_rsa: ''
+credentials_known_hosts: ''
+credentials_aws_access_key_id: ''
+credentials_aws_secret_access_key: ''

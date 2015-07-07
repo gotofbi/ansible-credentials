@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: "Justin Scott"
+  description: "Setting up file-based credentials for a user."
+  license: "MIT"
+  platforms:
+    - name: "Ubuntu"
+      versions:
+        - "trusty"
+    - name: "GenericUNIX"
+      versions:
+        - "any"
+    - name: "GenericBSD"
+      versions:
+        - "any"
+  categories:
+    - "system"
+    - "development"

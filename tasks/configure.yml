@@ -1,0 +1,23 @@
+---
+- name: Directory Exists | credentials
+  file:
+    state: directory
+    path: "{{ credentials_home_path }}/{{ item }}"
+    owner: "{{ credentials_user }}"
+    group: "{{ credentials_group }}"
+    mode: 0775
+  with_items:
+    - .aws
+    - .ssh
+
+- name: Upload Config | credentials
+  template:
+    src: "{{ item.file }}"
+    dest: "{{ credentials_home_path }}/{{ item.path }}/{{ item.file }}"
+    owner: "{{ credentials_user }}"
+    group: "{{ credentials_group }}"
+    mode: 0400
+  with_items:
+    - { path: '.aws', file: 'credentials' }
+    - { path: '.ssh', file: 'id_rsa' }
+    - { path: '.ssh', file: 'known_hosts' }
